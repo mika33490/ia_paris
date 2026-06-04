@@ -92,7 +92,7 @@ fixtures = requests.get(
 
 
 print("NB MATCHS:", len(fixtures.get("response", [])))
-
+envoyer_telegram("✅ Test Railway : le bot est bien lancé")
 odds = requests.get(
     f"https://v3.football.api-sports.io/odds?date={today}",
     headers=headers
