@@ -9,7 +9,7 @@ from datetime import datetime
 # =============================
 # LOAD MODEL
 # =============================
-model = joblib.load("ia_paris/ml/model.pkl")
+model = joblib.load("ml/model.pkl")
 
 API_KEY = "342efb42b24391a856705c2c3de698a4"
 BANKROLL = 100
@@ -541,6 +541,3 @@ if os.path.exists(fichier):
 print("RESULTATS MIS A JOUR")
 print("HISTORIQUE SAUVEGARDÉ")
 print("\nAnalyse terminée.")
-input("\nAppuie sur Entrée pour fermer...")
-print("\nFIN NORMALE DU SCRIPT")
-time.sleep(9999)
