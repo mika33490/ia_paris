@@ -538,6 +538,18 @@ if os.path.exists(fichier):
 
     df.to_csv(fichier, index=False)
 
+
 print("RESULTATS MIS A JOUR")
 print("HISTORIQUE SAUVEGARDÉ")
 print("\nAnalyse terminée.")
+resume = f"""🤖 Analyse terminée
+
+Matchs analysés : {len(fixtures.get("response", []))}
+SAFE BETS : {len(safe_results)}
+SNIPER BETS : {len(sniper_results)}
+
+Prochaine analyse dans 3 heures.
+"""
+
+envoyer_telegram(resume)
+
