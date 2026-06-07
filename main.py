@@ -550,6 +550,7 @@ SNIPER BETS : {len(sniper_results)}
 
 Prochaine analyse dans 3 heures.
 """
-
+print("ENVOI RESUME TELEGRAM")
 envoyer_telegram(resume)
+print("RESUME ENVOYE")
 
