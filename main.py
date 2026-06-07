@@ -23,11 +23,13 @@ def envoyer_telegram(message):
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
 
-    requests.post(url, data={
+    r = requests.post(url, data={
         "chat_id": chat_id,
         "text": message
     })
 
+    print("TELEGRAM STATUS:", r.status_code)
+    print("TELEGRAM REPONSE:", r.text)
 # =============================
 # CONFIG
 # =============================
