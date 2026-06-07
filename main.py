@@ -544,15 +544,20 @@ if os.path.exists(fichier):
 print("RESULTATS MIS A JOUR")
 print("HISTORIQUE SAUVEGARDÉ")
 print("\nAnalyse terminée.")
+
+date = today
+
 resume = f"""🤖 Analyse terminée
 
-Matchs analysés : {len(fixtures.get("response", []))}
-SAFE BETS : {len(safe_results)}
-SNIPER BETS : {len(sniper_results)}
+📅 {date}
 
-Prochaine analyse dans 3 heures.
+📊 Matchs analysés : {len(fixtures.get("response", []))}
+🟢 SAFE BETS : {len(safe_results)}
+💣 SNIPER BETS : {len(sniper_results)}
+
+⏳ Prochaine analyse dans 3 heures.
 """
-print("ENVOI RESUME TELEGRAM")
+
 envoyer_telegram(resume)
-print("RESUME ENVOYE")
+
 
