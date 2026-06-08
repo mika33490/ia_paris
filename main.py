@@ -28,8 +28,7 @@ def envoyer_telegram(message):
         "text": message
     })
 
-    print("TELEGRAM STATUS:", r.status_code)
-    print("TELEGRAM REPONSE:", r.text)
+
 # =============================
 # CONFIG
 # =============================
@@ -557,7 +556,27 @@ resume = f"""🤖 Analyse terminée
 
 ⏳ Prochaine analyse dans 3 heures.
 """
+top3 = safe_results[:3]
 
+if top3:
+message_top = "🏆 TOP 3 PARIS IA 🏆\n\n"
+
+for i, r in enumerate(top3, start=1):
+    montant = mise(r["proba"], r["cote"])
+
+    message_top += f"""
+{i}️⃣ {r['match']}
+
+🎯 {r['pari']}
+💰 Cote : {r['cote']}
+🤖 Score IA : {r['score']}/100
+📊 Confiance : {r['proba']}%
+💵 Mise : {montant}€
+⭐ {r['note']}
+
+"""
+
+    envoyer_telegram(message_top)
 envoyer_telegram(resume)
 
 
