@@ -545,6 +545,25 @@ print("HISTORIQUE SAUVEGARDÉ")
 print("\nAnalyse terminée.")
 
 date = today
+wins = 0
+losses = 0
+profit_total = 0
+taux_reussite = 0
+
+if os.path.exists("historique_paris.csv"):
+    df_bilan = pd.read_csv("historique_paris.csv")
+
+    if "resultat" in df_bilan.columns:
+        wins = len(df_bilan[df_bilan["resultat"] == "WIN"])
+        losses = len(df_bilan[df_bilan["resultat"] == "LOSE"])
+
+    if "profit" in df_bilan.columns:
+        profit_total = df_bilan["profit"].sum()
+
+    total_termines = wins + losses
+
+    if total_termines > 0:
+        taux_reussite = round((wins / total_termines) * 100, 1)
 
 resume = f"""🤖 Analyse terminée
 
@@ -554,9 +573,15 @@ resume = f"""🤖 Analyse terminée
 🟢 SAFE BETS : {len(safe_results)}
 💣 SNIPER BETS : {len(sniper_results)}
 
+📈 Bilan IA
+✅ Gagnés : {wins}
+❌ Perdus : {losses}
+🎯 Réussite : {taux_reussite}%
+💰 Profit : {round(profit_total, 2)}€
+
 ⏳ Prochaine analyse dans 3 heures.
-"""
-top3 = safe_results[:3]
+
+"""top3 = safe_results[:3]
 
 if top3:
 message_top = "🏆 TOP 3 PARIS IA 🏆\n\n"
