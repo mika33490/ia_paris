@@ -581,7 +581,8 @@ resume = f"""🤖 Analyse terminée
 
 ⏳ Prochaine analyse dans 3 heures.
 
-"""top3 = safe_results[:3]
+"""
+top3 = safe_results[:3]
 
 if top3:
 message_top = "🏆 TOP 3 PARIS IA 🏆\n\n"
