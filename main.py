@@ -585,12 +585,12 @@ resume = f"""🤖 Analyse terminée
 top3 = safe_results[:3]
 
 if top3:
-message_top = "🏆 TOP 3 PARIS IA 🏆\n\n"
+    message_top = "🏆 TOP 3 PARIS IA 🏆\n\n"
 
-for i, r in enumerate(top3, start=1):
-    montant = mise(r["proba"], r["cote"])
+    for i, r in enumerate(top3, start=1):
+        montant = mise(r["proba"], r["cote"])
 
-    message_top += f"""
+        message_top += f"""
 {i}️⃣ {r['match']}
 
 🎯 {r['pari']}
