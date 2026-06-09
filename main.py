@@ -57,6 +57,9 @@ LEAGUES_AUTORISEES = [
 
     # COMPÉTITIONS INTERNATIONALES
     1,    # Coupe du Monde FIFA
+    4,    # Euro Championship
+    5,    # UEFA Nations League
+    29,   # Qualif Coupe du Monde Afrique
 ]
 
 headers = {"x-apisports-key": API_KEY}
