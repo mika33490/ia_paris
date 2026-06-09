@@ -54,6 +54,9 @@ LEAGUES_AUTORISEES = [
     2,    # Champions League
     3,    # Europa League
     848   # Conference League
+
+    # COMPÉTITIONS INTERNATIONALES
+    1,    # Coupe du Monde FIFA
 ]
 
 headers = {"x-apisports-key": API_KEY}
