@@ -53,7 +53,7 @@ LEAGUES_AUTORISEES = [
     # COMPÉTITIONS UEFA
     2,    # Champions League
     3,    # Europa League
-    848   # Conference League
+    848,   # Conference League
 
     # COMPÉTITIONS INTERNATIONALES
     1,    # Coupe du Monde FIFA
