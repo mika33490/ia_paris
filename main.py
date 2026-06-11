@@ -100,6 +100,7 @@ fixtures = requests.get(
 
 print("NB MATCHS:", len(fixtures.get("response", [])))
 print("RESULTATS API :", fixtures.get("results"))
+print("ERREURS API :", fixtures.get("errors"))
 print(fixtures)
 
 odds = requests.get(
