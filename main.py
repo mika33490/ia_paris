@@ -100,6 +100,7 @@ fixtures = requests.get(
 
 print("NB MATCHS:", len(fixtures.get("response", [])))
 print("RESULTATS API :", fixtures.get("results"))
+print(fixtures)
 
 odds = requests.get(
     f"https://v3.football.api-sports.io/odds?date={today}",
